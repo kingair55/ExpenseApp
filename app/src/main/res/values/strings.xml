@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">App3</string>
+
+    <string-array name="dates_array">
+        <item>October 2015</item>
+        <item>September 2015</item>
+        <item>August 2015</item>
+        <item>July 2015</item>
+        <item>June 2015</item>
+        <item>May 2015</item>
+        <item>April 2015</item>
+        <item>March 2015</item>
+        <item>February 2015</item>
+        <item>January 2015</item>
+        <item>December 2014</item>
+        <item>November 2014</item>
+    </string-array>
+
+    <string-array name="status_array">
+        <item>All</item>
+        <item>Pending</item>
+        <item>Approved</item>
+        <item>Flagged</item>
+    </string-array>
+</resources>
