@@ -2,7 +2,10 @@ package com.example.mikie.app3;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
 import android.transition.Visibility;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -85,6 +88,18 @@ public class FeedListAdapter extends BaseAdapter {
         description.setText(item.Description);
         status.setText(item.Status.toString());
         date.setText(item.Date);
+
+        status.setGravity(Gravity.CENTER);
+        if(item.Status.toString().equals("Approved"))
+        {
+            status.setTextColor(Color.parseColor("#32cd32"));
+        }
+        else if(item.Status.toString().equals("Pending")){
+            status.setTextColor(Color.parseColor("#000000"));
+        }
+        else{
+            status.setTextColor(Color.parseColor("#FF0000"));
+        }
 
         return convertView;
     }

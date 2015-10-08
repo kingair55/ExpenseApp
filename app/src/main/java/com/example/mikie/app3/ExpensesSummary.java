@@ -16,6 +16,7 @@ import java.util.List;
 
 public class ExpensesSummary extends AppCompatActivity {
     private boolean isManager = true;
+
     ListView listView;
     FeedListAdapter listAdapter;
     List<ExpenseItem> feedItems;
@@ -41,29 +42,12 @@ public class ExpensesSummary extends AppCompatActivity {
         listView = (ListView)findViewById(R.id.lv_expenseList);
         feedItems = new ArrayList<ExpenseItem>();
 
-        ExpenseItem exp1 = new ExpenseItem();
-        exp1.Amount = "$46.20";
-        exp1.Subject = "Lunch with client";
-        exp1.Description = "Yadie yadie yada adaka nadsa ad akdba bda dad ab asbdba dsa aa ansabdbaa";
-        exp1.Status = ExpenseStatus.Approved;
-        exp1.Date = "9 / 25 / 2015";
-        exp1.Owner = "Mary Jane";
+        Intent intent = getIntent();
 
-        ExpenseItem exp2 = new ExpenseItem();
-        exp2.Amount = "$30.00";
-        exp2.Subject = "Travel to airport";
-        exp2.Description = "Yadie yadie yada adaka nadsa ad akdba bda dad ab asbdba dsa aa ansabdbaa";
-        exp2.Status = ExpenseStatus.Pending;
-        exp2.Date = "9 / 1 / 2015";
-        exp2.Owner = "Joe Bloggs";
-
-        ExpenseItem exp3 = new ExpenseItem();
-        exp3.Amount = "$22.50";
-        exp3.Subject = "Breakfast off-site";
-        exp3.Description = "Yadie yadie yada adaka nadsa ad akdba bda dad ab asbdba dsa aa ansabdbaa";
-        exp3.Status = ExpenseStatus.Flagged;
-        exp3.Date = "9 / 9 / 2015";
-        exp3.Owner = "Dirk Nowitzki";
+        Bundle data = getIntent().getExtras();
+        ExpenseItem exp1 = data.getParcelable("expenseItem1");
+        ExpenseItem exp2 = data.getParcelable("expenseItem2");
+        ExpenseItem exp3 = data.getParcelable("expenseItem3");
 
         feedItems.add(exp1);
         feedItems.add(exp2);
@@ -76,16 +60,45 @@ public class ExpensesSummary extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
                 Intent intent = new Intent(arg0.getContext(), ExpenseDetailActivity.class);
-                intent.putExtra("subject", ((TextView)arg1.findViewById(R.id.tvExpenseSubject)).getText());
-                intent.putExtra("amount", ((TextView)arg1.findViewById(R.id.tvExpenseAmount)).getText());
-                intent.putExtra("description", ((TextView)arg1.findViewById(R.id.tvExpenseDescription)).getText());
-                intent.putExtra("status", ((TextView)arg1.findViewById(R.id.tvExpenseStatus)).getText());
-                intent.putExtra("date", ((TextView)arg1.findViewById(R.id.tvDate)).getText());
-                if(isManager)
-                    intent.putExtra("owner", ((TextView)arg1.findViewById(R.id.tvExpenseOwner)).getText());
+                intent.putExtra("subject", ((TextView) arg1.findViewById(R.id.tvExpenseSubject)).getText());
+                intent.putExtra("amount", ((TextView) arg1.findViewById(R.id.tvExpenseAmount)).getText());
+                intent.putExtra("description", ((TextView) arg1.findViewById(R.id.tvExpenseDescription)).getText());
+                intent.putExtra("status", ((TextView) arg1.findViewById(R.id.tvExpenseStatus)).getText());
+                intent.putExtra("date", ((TextView) arg1.findViewById(R.id.tvDate)).getText());
+                if (isManager)
+                    intent.putExtra("owner", ((TextView) arg1.findViewById(R.id.tvExpenseOwner)).getText());
 
                 startActivity(intent);
             }
         });
+    }
+    public void approveExpense(View view){
+        Intent intent = new Intent(this, ExpensesSummary.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+        ExpenseItem exp1 = new ExpenseItem("$46.20", "Lunch with client", "Yadie yadie yada adaka nadsa ad akdba bda dad ab asbdba dsa aa ansabdbaa", ExpenseStatus.Approved, "9 / 25 / 2015", "Mary Jane");
+        ExpenseItem exp2 = new ExpenseItem("$30.00", "Travel to airport", "Yadie yadie yada adaka nadsa ad akdba bda dad ab asbdba dsa aa ansabdbaa", ExpenseStatus.Approved, "9 / 1 / 2015", "Joe Bloggs");
+        ExpenseItem exp3 = new ExpenseItem("$22.50", "Breakfast off-site", "Yadie yadie yada adaka nadsa ad akdba bda dad ab asbdba dsa aa ansabdbaa", ExpenseStatus.Flagged, "9 / 9 / 2015", "Dirk Nowitzki");
+
+        intent.putExtra("expenseItem1", exp1);
+        intent.putExtra("expenseItem2", exp2);
+        intent.putExtra("expenseItem3", exp3);
+
+        startActivity(intent);
+    }
+
+    public void flagExpense(View view){
+        Intent intent = new Intent(this, ExpensesSummary.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+        ExpenseItem exp1 = new ExpenseItem("$46.20", "Lunch with client", "Yadie yadie yada adaka nadsa ad akdba bda dad ab asbdba dsa aa ansabdbaa", ExpenseStatus.Approved, "9 / 25 / 2015", "Mary Jane");
+        ExpenseItem exp2 = new ExpenseItem("$30.00", "Travel to airport", "Yadie yadie yada adaka nadsa ad akdba bda dad ab asbdba dsa aa ansabdbaa", ExpenseStatus.Flagged, "9 / 1 / 2015", "Joe Bloggs");
+        ExpenseItem exp3 = new ExpenseItem("$22.50", "Breakfast off-site", "Yadie yadie yada adaka nadsa ad akdba bda dad ab asbdba dsa aa ansabdbaa", ExpenseStatus.Flagged, "9 / 9 / 2015", "Dirk Nowitzki");
+
+        intent.putExtra("expenseItem1", exp1);
+        intent.putExtra("expenseItem2", exp2);
+        intent.putExtra("expenseItem3", exp3);
+
+        MyApplication.getContext().startActivity(intent);
     }
 }
