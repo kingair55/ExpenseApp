@@ -19,6 +19,8 @@
         </activity>
         <activity android:name=".expense_item" >
         </activity>
+        <activity android:name=".ExpenseDetailActivity" >
+        </activity>
     </application>
 
 </manifest>

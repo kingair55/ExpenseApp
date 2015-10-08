@@ -10,4 +10,6 @@ public class ExpenseItem {
     public String Amount;
     public String Description;
     public ExpenseStatus Status;
+    public String Date;
+    public String Owner;
 }

@@ -6,6 +6,33 @@
     android:weightSum="1"
     android:background="@drawable/top_border">
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:weightSum="1"
+        android:layout_weight="0.01"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Medium Text"
+            android:id="@+id/tvExpenseOwner"
+            android:gravity="center_vertical"
+            android:layout_weight="0.73"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Medium Text"
+            android:id="@+id/tvDate"
+            android:gravity="center_vertical"
+            android:layout_weight="0.09" />
+    </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
@@ -52,26 +79,29 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Approve"
+            android:id="@+id/btn_Approve"
+            android:layout_weight="0.33" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Flag"
+            android:id="@+id/btn_Flag"
+            android:layout_weight="0.34" />
 
         <TextView
-            android:layout_width="176dp"
-            android:layout_height="match_parent"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Medium Text"
-            android:id="@+id/tvDate"
-            android:gravity="center_vertical"
-            android:layout_marginTop="15dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Medium Text"
             android:id="@+id/tvExpenseStatus"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"
-            android:gravity="center_horizontal"
-            android:textColor="#32cd32"/>
+            android:layout_weight="0.33" />
     </LinearLayout>
 </LinearLayout>

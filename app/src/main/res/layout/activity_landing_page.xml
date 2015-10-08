@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".landing_page"
+    android:orientation="vertical"
+    android:id="@+id/button_logo_id"
+    android:background="#ffffff"
+    android:weightSum="1"
+    android:padding="40dp">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/logo_id"
+        android:weightSum="1"
+        android:layout_weight="0.72">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView"
+            android:src="@mipmap/logo_raw"
+            android:layout_weight="0.82"
+            android:layout_gravity="center_horizontal" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/create_container_id"
+        android:padding="5dp">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create New Expense"
+            android:id="@+id/create_button_id"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#ffffff"
+            android:background="#4252FF"
+            android:textStyle="bold"
+            android:textSize="20dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/view_container_id"
+        android:padding="5dp">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View Existing Expense"
+            android:id="@+id/view_button_id"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#ffffff"
+            android:background="#4252ff"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:onClick="viewExpenses"/>
+    </LinearLayout>
+
+</LinearLayout>
