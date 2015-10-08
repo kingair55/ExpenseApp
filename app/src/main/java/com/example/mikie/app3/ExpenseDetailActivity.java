@@ -17,7 +17,7 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 
 public class ExpenseDetailActivity extends AppCompatActivity {
-    private boolean isManager = true;
+    private boolean isManager = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +66,11 @@ public class ExpenseDetailActivity extends AppCompatActivity {
         else{
             tvStatus = (TextView)findViewById(R.id.status_id);
             tvStatus.setText(status);
+
+            if(status.equals("Approved") || status.equals("Flagged")) {
+                Button btnPingManager = (Button)findViewById(R.id.ping_id);
+                btnPingManager.setVisibility(View.GONE);
+            }
         }
 
         TextView tvDate = (TextView)findViewById(R.id.date_id);
@@ -75,7 +80,7 @@ public class ExpenseDetailActivity extends AppCompatActivity {
 
         tvDate.setText(date);
         tvSubject.setText(subject);
-        tvAmount.setText(amount);
+            tvAmount.setText(amount);
         tvDescription.setText(description);
 
         tvStatus.setGravity(Gravity.CENTER);

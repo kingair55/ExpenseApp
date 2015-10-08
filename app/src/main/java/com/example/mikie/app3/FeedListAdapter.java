@@ -19,7 +19,7 @@ import java.util.List;
  * Created by mikie on 07/10/2015.
  */
 public class FeedListAdapter extends BaseAdapter {
-    private boolean isManager = true;
+    private boolean isManager = false;
     private Activity activity;
     private LayoutInflater inflater;
     private List<ExpenseItem> feedItems;

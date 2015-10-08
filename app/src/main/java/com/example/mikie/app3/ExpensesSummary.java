@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ExpensesSummary extends AppCompatActivity {
-    private boolean isManager = true;
+    private boolean isManager = false;
 
     ListView listView;
     FeedListAdapter listAdapter;
