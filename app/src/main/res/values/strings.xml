@@ -16,6 +16,7 @@
     <string name="welcome">Welcome</string>
     <string name="btn_logout">LOGOUT</string>
     <string name="name">Fullname</string>
+    <string name="title_activity_submit_expense">SubmitExpenseActivity</string>
 
     <string-array name="dates_array">
         <item>October 2015</item>

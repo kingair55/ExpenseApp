@@ -44,7 +44,8 @@
             android:textColor="#ffffff"
             android:background="#4252FF"
             android:textStyle="bold"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:onClick="createExpense"/>
     </LinearLayout>
 
     <LinearLayout
