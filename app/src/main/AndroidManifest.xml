@@ -10,17 +10,20 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity android:name=".MainActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".ExpensesSummary" >
         </activity>
         <activity android:name=".expense_item" >
         </activity>
         <activity android:name=".ExpenseDetailActivity" >
+        </activity>
+        <activity android:name=".LoginActivity2" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".RegisterActivity2" >
         </activity>
     </application>
 
